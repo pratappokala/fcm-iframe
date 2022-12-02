@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  
+
+  <script src="firebase-app.js"></script>
+  <script src="firebase-messaging.js"></script>
+  <!-- <script src="firebase-messaging-sw.js"></script> -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+  
+    // import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+    import { getMessaging, getToken } from 'https://www.gstatic.com/firebasejs/9.9.0/firebase-messaging.js';
+    
+    
+
+ if ('serviceWorker' in navigator) {
+   console.log("***serviceWorker****");
+     navigator.serviceWorker.register('firebase-messaging-sw.js')
+       .then(function(registration) {
+        console.log("***serviceWorker**inside**");
+         console.log('Registration successful, scope is:', registration.scope);
+       }).catch(function(err) {
+        console.log('Service worker registration failed, error:', err);
+       });
+    }
+
+          
+          
+      console.log("*******firebase******",firebase);
+  
+    </script>
+ 
+    <script>
+
+      </script>
+
+  
+
+     <script src="app.js"></script>
+</head>
+
+<body>
+ 
+    Receiving iframe.  
+    <h1>FCM - Push Notification</h1>
+   
+<div id="message">
+  <button onClick="SubscribeUsers()">subscribe</button>
+</body>
+</html>
